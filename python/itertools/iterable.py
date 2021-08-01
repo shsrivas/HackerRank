@@ -2,13 +2,10 @@ from itertools import combinations
 from itertools import groupby
 
 n = int(input())
-nlist = [x for x in range(1, n+1)]
-
-alp = list(input().split())
+alp = input().split()
 k = int(input())
 
-com = list(combinations(nlist, k))
-print(*com)
+com = list(combinations([x for x in range(1, n+1)], k))
 
 l = []
 j =1
@@ -18,7 +15,6 @@ for i in alp:
         j+=1
 
 count = 0
-
 for k, c in groupby(com):
     for i in l:
         if i in k:
